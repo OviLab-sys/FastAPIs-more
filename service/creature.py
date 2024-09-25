@@ -1,4 +1,9 @@
+import os
 from model.creature import Creature
+if os.getenv("CRYPTID_UNIT_TEST"):
+    from fake import creature as data
+else:
+    from data import creature as data
 
 __creatures = [
                 Creature(name="Yeti",
